@@ -1,0 +1,34 @@
+.card{
+    background-color: #2D405B;
+}
+
+.body{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 100%;
+}
+
+.fulldesc{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* number of lines to show */
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.card.desc:hover{
+    filter: brightness(110%);
+    cursor: pointer;
+}
+
+.card.desc:hover h3{
+    color: #F7881C;
+
+}
+
+@media screen and (max-width: 800px) {
+    .body {
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+}
