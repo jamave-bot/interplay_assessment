@@ -31,8 +31,12 @@ function App() {
       console.log(error);
     }
   }
-  
+
   console.log(interplayObj.courses);
+
+  const sortSubArrAlphabetically = (arr) =>{
+    
+  }
 
   return (
     <div className="App">
