@@ -1,4 +1,4 @@
-.card{
+/* .card{
     background-color: #2D405B;
 }
 
@@ -6,29 +6,43 @@
     padding-top: 20px;
     padding-bottom: 20px;
     height: 100%;
-}
+} */
 
 .fulldesc{
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 4; /* number of lines to show */
+    -webkit-line-clamp: 2; 
     line-clamp: 2;
     -webkit-box-orient: vertical;
 }
 
-.card.desc:hover{
-    filter: brightness(110%);
+.container:hover{
+    /* filter: brightness(110%); */
     cursor: pointer;
+    background-color:#4A5971 ;
 }
 
-.card.desc:hover h3{
+.container:hover h3{
     color: #F7881C;
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 500px;
+    max-height: 200px;
+    background-color: #2D405B ;
+    color: white;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
 
 }
+
 
 @media screen and (max-width: 800px) {
-    .body {
+    .container {
       width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
     }
 }

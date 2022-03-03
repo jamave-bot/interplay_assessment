@@ -12,6 +12,7 @@ function App() {
   useEffect(() => {
     
     getInfo();
+     // eslint-disable-next-line
   }, []);
   
   async function getInfo() {
@@ -25,6 +26,8 @@ function App() {
             (a, b) =>
               parseInt(a.difficulty_level) - parseInt(b.difficulty_level)
           );
+
+          console.log(sortSubArrAlphabetically(obj.courses))
           setInterplayObj(obj);
         });
     } catch (error) {
@@ -32,11 +35,37 @@ function App() {
     }
   }
 
-  console.log(interplayObj.courses);
+  // console.log(interplayObj.courses);
 
   const sortSubArrAlphabetically = (arr) =>{
-    
+    console.log("This is the arr: ", arr)
+    let newArr = [];
+    let subArr = [];
+    let currentDiff = arr[0].difficulty_level
+    // console.log(currentDiff)
+    arr.forEach(course => {
+      if (course.difficulty_level === currentDiff){
+        subArr.push(course)
+        console.log("same diff arr: ", subArr)
+      } if (course === arr[arr.length-1]){
+        subArr.sort((a,b)=> a.name.localeCompare(b.name))
+        console.log("Sorted subarray: " ,subArr)
+        newArr.concat(subArr)
+      } else if (course.difficulty_level !== currentDiff){
+        currentDiff = course.difficulty_level
+        // console.log(subArr)
+        // console.log("are we getting here")
+        subArr.sort((a,b)=> a.name.localeCompare(b.name))
+        console.log("Sorted subarray: " ,subArr)
+        newArr.concat(subArr) 
+        // console.log(newArr)
+        subArr = [course];
+      }
+    });
+    return newArr;
   }
+
+  // console.log("maybe sorted: ", sortSubArrAlphabetically(interplayObj.courses))
 
   return (
     <div className="App">

@@ -1,7 +1,9 @@
 .App {
   text-align: center;
   background-color: #1C2D47;
+  height: 100%;
   color: white;
+  font-family: 'Monsterrat', sans-serif;
 }
 
 .spinner{
