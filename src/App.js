@@ -58,6 +58,7 @@ function App() {
         subArr.sort((a,b)=> a.name.localeCompare(b.name))
         console.log("Sorted subarray: " ,subArr)
         newArr.concat(subArr) 
+        console.log("this should be the newArr: ", newArr)
         // console.log(newArr)
         subArr = [course];
       }
